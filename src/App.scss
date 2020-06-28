@@ -81,7 +81,11 @@ body {
   margin: 0;
   padding: 0;
 }
-
+.App{
+  background-image: url("./assets/bg.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
 h1 {
   font-family: 'archia';
   font-size: 24px !important;
@@ -330,8 +334,7 @@ h6 {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  margin-left: 10rem;
-  margin-right: 5rem;
+
 
   .header {
     display: flex;
@@ -403,14 +406,12 @@ h6 {
   }
 
   .state-left {
-    margin-left: 2.5rem;
-    margin-right: 2.5rem;
+    border-right: 1px solid #ccc;
     position: relative;
   }
 
   .state-right {
-    margin-left: 2.5rem;
-    margin-right: 2.5rem;
+
   }
 
   a {
@@ -2915,8 +2916,8 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-bottom: 5rem;
-  margin-top: 5rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
 
   & > * {
     align-self: center;
@@ -4184,8 +4185,8 @@ footer {
     margin-right: 1rem;
 
     .button {
-      background: $gray-light;
-      color: $gray;
+      background: #79e460;
+      color: #fff;
       font-weight: 600;
       height: 2.5rem;
       justify-content: center;
@@ -4194,7 +4195,7 @@ footer {
       width: 5rem;
 
       &:hover {
-        background: $gray-hover;
+        background: #6ce84f;
       }
     }
   }
@@ -5217,4 +5218,8 @@ footer {
     opacity: 0;
     transform: translateY(20px);
   }
+}
+.State .state-left, .State .state-right{
+  background-color:#fffffff7;
+  padding:20px 65px;
 }

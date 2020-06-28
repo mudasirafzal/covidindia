@@ -51,8 +51,8 @@ function App() {
   const pages = [
     {
       pageLink: '/',
-      view: State,
-      displayName: 'State',
+      view: Home,
+      displayName: 'Home',
       showInNavbar: true,
     },
     {

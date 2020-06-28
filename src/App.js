@@ -104,11 +104,7 @@ function App() {
       <Suspense fallback={<div />}>
         <Router>
           <ScrollToTop />
-          <Navbar
-            pages={pages}
-            {...{darkMode}}
-            {...{showLanguageSwitcher, setShowLanguageSwitcher}}
-          />
+          
           <Route
             render={({location}) => (
               <React.Fragment>

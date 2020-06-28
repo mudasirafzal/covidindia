@@ -107,7 +107,7 @@ function State(props) {
     <React.Fragment>
       <Helmet>
         <title>
-          Coronavirus Outbreak in {STATE_NAMES[stateCode]}
+          Coronavirus Outbreak in {STATE_NAMES[stateCode]} 
         </title>
         <meta
           name="title"

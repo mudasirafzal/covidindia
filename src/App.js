@@ -35,7 +35,14 @@ const LanguageSwitcher = lazy(() =>
   )
 );
 
-
+const schemaMarkup = {
+  '@context': 'http://schema.org/',
+  '@type': 'NGO',
+  name: 'Coronavirus Outbreak in India: Latest Map and Case Count',
+  alternateName: 'COVID-19 Tracker',
+  url: 'https://www.covid19india.org/',
+  image: 'https://www.covid19india.org/thumbnail.png',
+};
 
 function App() {
   const darkMode = useDarkMode(false);
@@ -44,9 +51,9 @@ function App() {
   const pages = [
     {
       pageLink: '/',
-      view: State,
-      displayName: 'State',
-      showInNavbar: false,
+      view: Home,
+      displayName: 'Home',
+      showInNavbar: true,
     },
     {
       pageLink: '/demographics',
@@ -82,7 +89,11 @@ function App() {
 
   return (
     <div className="App">
-      
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify(schemaMarkup)}
+        </script>
+      </Helmet>
 
       <Suspense fallback={<div />}>
         <LanguageSwitcher
@@ -93,7 +104,11 @@ function App() {
       <Suspense fallback={<div />}>
         <Router>
           <ScrollToTop />
-
+          <Navbar
+            pages={pages}
+            {...{darkMode}}
+            {...{showLanguageSwitcher, setShowLanguageSwitcher}}
+          />
           <Route
             render={({location}) => (
               <React.Fragment>

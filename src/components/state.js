@@ -39,7 +39,7 @@ const Level = lazy(() => import('./level' /* webpackChunkName: "Level" */));
 function State(props) {
   const {t} = useTranslation();
 
-  const stateCode = "JK"
+  const stateCode = useParams().stateCode.toUpperCase();
 
   const [mapStatistic, setMapStatistic] = useState('confirmed');
   const [mapSwitcher, {width}] = useMeasure();
@@ -107,7 +107,7 @@ function State(props) {
     <React.Fragment>
       <Helmet>
         <title>
-          Coronavirus Outbreak in {STATE_NAMES[stateCode]}
+          Coronavirus Outbreak in {STATE_NAMES[stateCode]} - covid19india.org
         </title>
         <meta
           name="title"
@@ -119,10 +119,7 @@ function State(props) {
         <div className="state-left">
           <div className="header">
             <div className="header-left">
-              <h1
-        className="state-name">
-        Jammu & Kashmir
-        </h1>
+              <StateDropdown {...{stateCode}} />
               <h5>{`Last Updated on ${formatDate(
                 data[stateCode].meta.last_updated,
                 'dd MMM, p'
